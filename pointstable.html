@@ -6,94 +6,61 @@
     <title>eFootball League - Points Table</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Additional CSS for the glowing effect and center alignment */
-        #winner-section {
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
             text-align: center;
-            margin-top: 50px;
+            margin: 20px 0;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #f4f4f4;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
 
-        #winner-section h2 {
-            font-size: 100px;
-            margin-bottom: 10px;
-            color: rgb(230, 191, 17);
+        /* Highlight Top 4 Teams */
+        .top-four {
+            border-left: 5px solid rgb(82, 231, 89);
+            padding-left: 10px;
         }
-
-        #winner-section p {
-            font-size: 60px;
-            margin: 10px 0;
-            color: rgb(184, 29, 29);
-            font-weight: bold;
-            animation: glow-text 1s infinite alternate;
+        .btm-three {
+            border-left: 5px solid rgb(233, 10, 10);
+            padding-left: 10px;
         }
-
-        #winner-section img {
-            width: 500px;
-            transition: all 0.3s ease-in-out;
-            margin-left: 40px;
-            border-radius: 10px;
-        }
-
-        #celebration-button {
-            display: block;
-            margin: 50px auto;
-            padding: 10px 20px;
-            font-size: 20px;
-            cursor: pointer;
-            background-color: aqua;
-            border: none;
-            border-radius: 5px;
-            transition: all 0.3s ease-in-out;
-            animation: glow-button 1s infinite alternate;
-        }
-
-        .glow {
-            box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.8);
-        }
-
-        @keyframes glow-text {
-            from {
-                text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000;
-            }
-            to {
-                text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
-            }
-        }
-
-        @keyframes glow-button {
-            from {
-                box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff;
-            }
-            to {
-                box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00;
-            }
-        }
-
-        /* Responsive design */
-        @media (max-width: 600px) {
-            #winner-section h2 {
-                font-size: 30px;
-            }
-
-            #winner-section p {
-                font-size: 25px;
-            }
-
-            #winner-section img {
-                width: 200px;
-                margin-left: 0;
-            }
-
-            #celebration-button {
-                font-size: 16px;
-                padding: 8px 16px;
-                margin-left: 0;
-            }
+        .mid {
+            border-left: 5px solid rgb(253, 236, 47);
+            padding-left: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>eFootball<br>Manakamana Premiere League<br>3rd EDITION.</h1>
+        <h1>eFootball League - Manakamana Premiere League (3rd Edition)</h1>
     </header>
     <nav>
         <a href="index.html">Fixtures</a>
@@ -102,13 +69,6 @@
         <a href="rules.html">Rules</a>
     </nav>
     <div class="content">
-        <div class="season-selector">
-            <label for="season">Select Season:</label>
-            <select id="season" onchange="changeSeason()">
-                <option value="s1p1.html">S1: AASHISH</option>
-                <option value="pointstable.html" selected>Current Season</option>
-            </select>
-        </div>
         <section id="points-table" class="standings">
             <h2>Standings</h2>
             <table id="standings-table">
@@ -137,7 +97,7 @@
                         <td>4</td>
                         <td>3</td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td>ANISH</td>
                         <td>1</td>
                         <td>1</td>
@@ -229,31 +189,59 @@
             </table>
         </section>
     </div>
-    <!---
-    <div class="container">
-        <div class="first">
-            <input type="text" placeholder="AASHISH" class="first1" readonly><br>
-            <input type="text" placeholder="BINAYA" class="first2" readonly>
-        </div>
-        <div class="second">
-            <input type="text" placeholder="SUJAL" class="second1" readonly><br>
-            <input type="text" placeholder="PARU DAI" class="second2" readonly>
-        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const standingsTable = document.getElementById('standings-table').getElementsByTagName('tbody')[0];
+            const standings = Array.from(standingsTable.getElementsByTagName('tr'));
 
-        <div class="third">
-            <input type="text" placeholder="AASHISH" class="third1" readonly><br>
-            <input type="text" placeholder="SUJAL" class="third2" readonly>
-        </div>
+            function getData(row) {
+                const cells = row.getElementsByTagName('td');
+                return {
+                    name: cells[0].innerText,
+                    mp: parseInt(cells[1].innerText) || 0,
+                    w: parseInt(cells[2].innerText) || 0,
+                    d: parseInt(cells[3].innerText) || 0,
+                    l: parseInt(cells[4].innerText) || 0,
+                    gf: parseInt(cells[5].innerText) || 0,
+                    ga: parseInt(cells[6].innerText) || 0,
+                    gd: parseInt(cells[7].innerText) || 0,
+                    pts: parseInt(cells[8].innerText) || 0
+                };
+            }
 
-        <div class="fourth">
-            <input type="text" placeholder="BINAYA" class="fourth1" readonly><br>
-            <input type="text" placeholder="AASHISH" class="fourth2" readonly>
-            
-            <input type="text" placeholder="AASHISH" class="fifth" readonly>
-        </div>
-    </div>
-    -->
-   
-    <script src="script.js"></script>
+            function sortStandings(standings) {
+                return standings.sort((a, b) => {
+                    const dataA = getData(a);
+                    const dataB = getData(b);
+
+                    if (dataA.pts !== dataB.pts) {
+                        return dataB.pts - dataA.pts;
+                    }
+                    if (dataA.gd !== dataB.gd) {
+                        return dataB.gd - dataA.gd;
+                    }
+                    return dataB.gf - dataA.gf;
+                });
+            }
+
+            function updateStandings() {
+                const sortedStandings = sortStandings(standings);
+                sortedStandings.forEach((row, index) => {
+                    row.classList.remove('top-four'); // Remove previous highlighting
+                    if (index < 4) {
+                        row.classList.add('top-four'); // Add blue line to the top 4 teams
+                    }else if(index > 5) {
+                        row.classList.add('btm-three');
+                    
+                    }else if(index > 3){
+                        row.classList.add('mid');
+                    }
+                    standingsTable.appendChild(row);
+                });
+            }
+
+            updateStandings();
+        });
+    </script>
 </body>
 </html>

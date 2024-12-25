@@ -133,6 +133,16 @@ function changeSeason() {
 
 
 
+function updateStandings() {
+    const sortedStandings = sortStandings(standings);
+    sortedStandings.forEach((row, index) => {
+        row.classList.remove('top-four'); // Remove previous highlighting
+        if (index < 4) {
+            row.classList.add('top-four'); // Add blue line to the top 4 teams
+        }
+        standingsTable.appendChild(row);
+    });
+}
 
 
 

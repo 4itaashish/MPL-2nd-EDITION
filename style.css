@@ -285,3 +285,14 @@ a[href$=".jfif"]:hover {
     margin-top: 25px;
     padding: 5px 5px;
 }
+
+
+
+
+
+/* Add this to your existing CSS */
+.top-four {
+    border-left: 5px solid blue;
+    padding-left: 10px; /* Optional: for spacing */
+}
+
