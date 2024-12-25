@@ -69,6 +69,13 @@
         <a href="rules.html">Rules</a>
     </nav>
     <div class="content">
+        <div class="season-selector">
+            <label for="season">Select Season:</label>
+            <select id="season" onchange="changeSeason()">
+                <option value="s1p1.html">S1:AASHISH</option>
+                <option value="pointstable.html" selected>Current Season</option>
+            </select>
+        </div>
         <section id="points-table" class="standings">
             <h2> MPL Standings</h2>
             <table id="standings-table">
@@ -243,5 +250,6 @@
             updateStandings();
         });
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
