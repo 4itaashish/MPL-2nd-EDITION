@@ -5,46 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eFootball League - Points Table</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-
-    
-
-        /* Modal CSS */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .player-name{
-            cursor: pointer;
-        }
-    </style>
+   
+   
 </head>
 <body>
     <header>
@@ -83,7 +45,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="player-name" data-player="AASHISH">AASHISH</td>
+                        <td>AASHISH</td>
                         <td>3</td>
                         <td>3</td>
                         <td>0</td>
@@ -94,7 +56,7 @@
                         <td>9</td>
                     </tr>
                     <tr>
-                        <td class="player-name" data-player="ASAL">ASAL</td>
+                        <td>ASAL</td>
                         <td>2</td>
                         <td>0</td>
                         <td>0</td>
@@ -105,7 +67,7 @@
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td class="player-name" data-player="RAJ">PARU DAI</td>
+                        <td>PARU DAI</td>
                         <td>2</td>
                         <td>1</td>
                         <td>0</td>
@@ -116,7 +78,7 @@
                         <td>3</td>
                     </tr>
                     <tr>
-                        <td class="player-name" data-player="SUJAL">THAKUR VAI</td>
+                        <td>THAKUR VAI</td>
                         <td>2</td>
                         <td>0</td>
                         <td>0</td>
@@ -127,7 +89,7 @@
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td class="player-name" data-player="SUJAL">ANJAN VAI</td>
+                        <td>ANJAN VAI</td>
                         <td>3</td>
                         <td>2</td>
                         <td>1</td>
@@ -158,7 +120,7 @@
                 </thead>
                 <tbody>
                       <tr>
-                        <td class="player-name" data-player="BINAYA">BINAYA</td>
+                        <td>BINAYA</td>
                         <td>2</td>
                         <td>2</td>
                         <td>0</td>
@@ -170,7 +132,7 @@
                     </tr>
 
                     <tr>
-                        <td class="player-name" data-player="PARU DAI">ANISH</td>
+                        <td>ANISH</td>
                         <td>2</td>
                         <td>1</td>
                         <td>1</td>
@@ -182,7 +144,7 @@
                     </tr>
 
                     <tr>
-                        <td class="player-name" data-player="DEV AALU">DEV AALU</td>
+                        <td>DEV AALU</td>
                         <td>2</td>
                         <td>1</td>
                         <td>1</td>
@@ -193,7 +155,7 @@
                         <td>4</td>
                     </tr>
                     <tr>
-                        <td class="player-name" data-player="PARU DAI">RAAJ</td>
+                        <td>RAAJ</td>
                         <td>3</td>
                         <td>0</td>
                         <td>1</td>
@@ -209,7 +171,7 @@
                     
                   
                       <tr>
-                        <td class="player-name" data-player="HARI DAI">KHAIRE VAI</td>
+                        <td>KHAIRE VAI</td>
                         <td>3</td>
                         <td>0</td>
                         <td>0</td>
@@ -247,7 +209,61 @@
 
     
 
-    <script src="script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const tables = document.querySelectorAll('.standings table'); // Select all standings tables
+
+    // Helper function to get data from a row
+    function getData(row) {
+        const cells = row.getElementsByTagName('td');
+        return {
+            name: cells[0].innerText,
+            mp: parseInt(cells[1].innerText) || 0,
+            w: parseInt(cells[2].innerText) || 0,
+            d: parseInt(cells[3].innerText) || 0,
+            l: parseInt(cells[4].innerText) || 0,
+            gf: parseInt(cells[5].innerText) || 0,
+            ga: parseInt(cells[6].innerText) || 0,
+            gd: parseInt(cells[7].innerText) || 0,
+            pts: parseInt(cells[8].innerText) || 0,
+        };
+    }
+
+    // Helper function to sort standings
+    function sortStandings(standings) {
+        return standings.sort((a, b) => {
+            const dataA = getData(a);
+            const dataB = getData(b);
+
+            if (dataA.pts !== dataB.pts) {
+                return dataB.pts - dataA.pts; // Sort by points
+            }
+            if (dataA.gd !== dataB.gd) {
+                return dataB.gd - dataA.gd; // Sort by goal difference
+            }
+            return dataB.gf - dataA.gf; // Sort by goals scored
+        });
+    }
+
+    // Process each table
+    tables.forEach((table) => {
+        const tbody = table.getElementsByTagName('tbody')[0];
+        const rows = Array.from(tbody.getElementsByTagName('tr'));
+
+        // Sort rows and update the table
+        const sortedRows = sortStandings(rows);
+        sortedRows.forEach((row, index) => {
+            row.classList.remove('top-four'); // Remove previous highlighting
+            if (index < 4) {
+                row.classList.add('top-four'); // Highlight top 4 teams
+            }
+            tbody.appendChild(row); // Re-append rows in sorted order
+        });
+    });
+});
+
+
+    </script>
     
 
    
