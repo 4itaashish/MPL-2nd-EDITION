@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const sortedRows = sortStandings(rows);
         sortedRows.forEach((row, index) => {
             row.classList.remove('top-four'); // Remove previous highlighting
-            if (index < 4) {
+            if (index < 2) {
                 row.classList.add('top-four'); // Highlight top 4 teams
             }
             tbody.appendChild(row); // Re-append rows in sorted order
