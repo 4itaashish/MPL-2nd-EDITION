@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eFootball League - Points Table</title>
     <link rel="stylesheet" href="style.css">
-
     <style>
-    .top-four {
-    border-top: 2px solid rgb(73, 241, 21);
-}
-
-   </style>
-   
+        
+        /* Highlight Top 4 Teams */
+        .top-four {
+            border-left: 5px solid rgb(82, 231, 89);
+            padding-left: 10px;
+        }
+        .btm-three {
+            border-left: 5px solid rgb(233, 10, 10);
+            padding-left: 10px;
+        }
+        .mid {
+            border-left: 5px solid rgb(253, 236, 47);
+            padding-left: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1 >eFootball<br>Manakamana Premiere League<br> 3rd EDITION. </h1 >
+        <h1>eFootball<br>Manakamana Premiere<br>League<br>3rd EDITION</h1>
     </header>
     <nav>
         <a href="index.html">Fixtures</a>
@@ -30,11 +38,12 @@
             <select id="season" onchange="changeSeason()">
                 <option value="s1p.html">S1:AASHISH</option>
                 <option value="s2p.html">S2:BINAYA</option>
+                <option value="s3p.html">S3:ANISH</option>
                 <option value="pointstable.html" selected>Current Season</option>
             </select>
         </div>
         <section id="points-table" class="standings">
-            <h2>GROUP A</h2>
+            <h2> MPL Standings</h2>
             <table id="standings-table">
                 <thead>
                     <tr>
@@ -52,226 +61,198 @@
                 <tbody>
                     <tr>
                         <td>AASHISH</td>
-                        <td>9</td>
-                        <td>5</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>32</td>
-                        <td>17</td>
-                        <td>15</td>
-                        <td>16</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>ANISH</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
                     </tr>
                     <tr>
                         <td>ASAL</td>
-                        <td>9</td>
-                        <td>5</td>
-                        <td>1</td>
-                        <td>3</td>
-                        <td>25</td>
-                        <td>19</td>
-                        <td>6</td>
-                        <td>16</td>
-                    </tr>
-                    <tr>
-                        <td>PARU DAI</td> 
-                        <td>9</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>4</td>
-                        <td>14</td>
-                        <td>14</td>
                         <td>0</td>
-                        <td>8</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
                     </tr>
+                    
                     <tr>
                         <td>THAKUR VAI</td>
-                        <td>9</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>6</td>
-                        <td>15</td>
-                        <td>27</td>
-                        <td>-12</td>
-                        <td>7</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
                     </tr>
+                    
                     <tr>
-                        <td>ANJAN VAI</td>
-                        <td>9</td>
-                        <td>6</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>33</td>
-                        <td>21</td>
-                        <td>12</td>
-                        <td>20</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section id="points-table" class="standings">
-            <h2>GROUP B</h2>
-            <table id="standings-table">
-                <thead>
-                    <tr>
-                        <th>Teams</th>
-                        <th>MP</th>
-                        <th>W</th>
-                        <th>D</th>
-                        <th>L</th>
-                        <th>GF</th>
-                        <th>GA</th>
-                        <th>GD</th>
-                        <th>Pts</th>
-                    </tr>
-                </thead>
-                <tbody>
-                      <tr>
                         <td>BINAYA</td>
-                        <td>9</td>
-                        <td>5</td>
                         <td>0</td>
-                        <td>4</td>
-                        <td>21</td>
-                        <td>22</td>
                         <td>0</td>
-                        <td>15</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
                     </tr>
-
                     <tr>
-                        <td>ANISH</td>
-                        <td>9</td>
-                        <td>4</td>
-                        <td>4</td>
-                        <td>1</td>
-                        <td>26</td>
-                        <td>15</td>
-                        <td>11</td>
-                        <td>16</td>
+                        <td>PARU DAI</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
                     </tr>
-
                     <tr>
-                        <td>DEV AALU</td>
-                        <td>9</td>
-                        <td>4</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>19</td>
-                        <td>15</td>
-                        <td>5</td>
-                        <td>15</td>
+                        <td>AALU VAI</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
                     </tr>
                     <tr>
                         <td>RAAJ</td>
-                        <td>9</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>4</td>
-                        <td>26</td>
-                        <td>24</td>
-                        <td>3</td>
-                        <td>11</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
                     </tr>
-                    
-                     
-                    
-                    
-                  
-                      <tr>
+                    <tr>
+                        <td>ANJAN VAI</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
                         <td>KHAIRE VAI</td>
-                        <td>9</td>
                         <td>0</td>
                         <td>0</td>
-                        <td>9</td>
-                        <td>12</td>
-                        <td>50</td>
-                        <td>-38</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
                         <td>0</td>
                     </tr>
-                   
-                    
-                    
                 </tbody>
             </table>
         </section>
     </div>
-    
-    <div class="container">
+<!---
+     <div class="container">
         <div class="first">
-            <input type="text" placeholder="ANJAN" class="first1" readonly><br>
-            <input type="text" placeholder="DEV AALU" class="first2" readonly>
+            <input type="text" placeholder="AASHISH" class="first1" readonly><br>
+            <input type="text" placeholder="BINAYA" class="first2" readonly>
         </div>
         <div class="second">
-            <input type="text" placeholder="ANISH" class="second1" readonly><br>
-            <input type="text" placeholder="AASHISH" class="second2" readonly>
+            <input type="text" placeholder="ANJAN VAI" class="second1" readonly><br>
+            <input type="text" placeholder="ANISH" class="second2" readonly>
         </div>
+
         <div class="third">
-            <input type="text" placeholder="" class="third1s6" readonly><br>
-            <input type="text" placeholder="" class="third2s6" readonly>
+            <input type="text" placeholder="BINAYA" class="third1" readonly><br>
+            <input type="text" placeholder="ANJAN VAI" class="third2" readonly>
         </div>
+
         <div class="fourth">
-            <input type="text" placeholder="" class="fifths6" readonly>
+            <input type="text" placeholder="AASHISH" class="fourth1" readonly><br>
+            <input type="text" placeholder="BINAYA" class="fourth2" readonly>
+            
+            <input type="text" placeholder="BINAYA" class="fifth" readonly>
         </div>
-    </div> 
-
-    
-
+    </div>
+    -->
     <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const tables = document.querySelectorAll('.standings table'); // Select all standings tables
+        document.addEventListener('DOMContentLoaded', function() {
+            const standingsTable = document.getElementById('standings-table').getElementsByTagName('tbody')[0];
+            const standings = Array.from(standingsTable.getElementsByTagName('tr'));
 
-    // Helper function to get data from a row
-    function getData(row) {
-        const cells = row.getElementsByTagName('td');
-        return {
-            name: cells[0].innerText,
-            mp: parseInt(cells[1].innerText) || 0,
-            w: parseInt(cells[2].innerText) || 0,
-            d: parseInt(cells[3].innerText) || 0,
-            l: parseInt(cells[4].innerText) || 0,
-            gf: parseInt(cells[5].innerText) || 0,
-            ga: parseInt(cells[6].innerText) || 0,
-            gd: parseInt(cells[7].innerText) || 0,
-            pts: parseInt(cells[8].innerText) || 0,
-        };
-    }
-
-    // Helper function to sort standings
-    function sortStandings(standings) {
-        return standings.sort((a, b) => {
-            const dataA = getData(a);
-            const dataB = getData(b);
-
-            if (dataA.pts !== dataB.pts) {
-                return dataB.pts - dataA.pts; // Sort by points
+            function getData(row) {
+                const cells = row.getElementsByTagName('td');
+                return {
+                    name: cells[0].innerText,
+                    mp: parseInt(cells[1].innerText) || 0,
+                    w: parseInt(cells[2].innerText) || 0,
+                    d: parseInt(cells[3].innerText) || 0,
+                    l: parseInt(cells[4].innerText) || 0,
+                    gf: parseInt(cells[5].innerText) || 0,
+                    ga: parseInt(cells[6].innerText) || 0,
+                    gd: parseInt(cells[7].innerText) || 0,
+                    pts: parseInt(cells[8].innerText) || 0
+                };
             }
-            if (dataA.gd !== dataB.gd) {
-                return dataB.gd - dataA.gd; // Sort by goal difference
+
+            function sortStandings(standings) {
+                return standings.sort((a, b) => {
+                    const dataA = getData(a);
+                    const dataB = getData(b);
+
+                    if (dataA.pts !== dataB.pts) {
+                        return dataB.pts - dataA.pts;
+                    }
+                    if (dataA.gd !== dataB.gd) {
+                        return dataB.gd - dataA.gd;
+                    }
+                    return dataB.gf - dataA.gf;
+                });
             }
-            return dataB.gf - dataA.gf; // Sort by goals scored
+
+            function updateStandings() {
+                const sortedStandings = sortStandings(standings);
+                sortedStandings.forEach((row, index) => {
+                    row.classList.remove('top-four'); // Remove previous highlighting
+                    if (index < 4) {
+                        row.classList.add('top-four'); // Add blue line to the top 4 teams
+                    }else if(index > 5) {
+                        row.classList.add('btm-three');
+                    
+                    }else if(index > 3){
+                        row.classList.add('mid');
+                    }
+                    standingsTable.appendChild(row);
+                });
+            }
+
+            updateStandings();
         });
-    }
-
-    // Process each table
-    tables.forEach((table) => {
-        const tbody = table.getElementsByTagName('tbody')[0];
-        const rows = Array.from(tbody.getElementsByTagName('tr'));
-
-        // Sort rows and update the table
-        const sortedRows = sortStandings(rows);
-        sortedRows.forEach((row, index) => {
-            row.classList.remove('top-four'); // Remove previous highlighting
-            if (index < 2) {
-                row.classList.add('top-four'); // Highlight top 4 teams
-            }
-            tbody.appendChild(row); // Re-append rows in sorted order
-        });
-    });
-});
-
-
     </script>
-    
-
-   
+    <script src="script.js"></script>
 </body>
 </html>

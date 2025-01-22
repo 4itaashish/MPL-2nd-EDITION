@@ -1,12 +1,12 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #c6701f;
+    background-color: #f021b6;
     margin: 0;
     padding: 0;
 }
 header {
     background-color: #b73714;
-    color: rgb(248, 244, 244);
+    color: rgb(51, 255, 0);
     padding: 1em;
     text-align: center;
 }
@@ -36,7 +36,7 @@ nav a:hover {
     padding: 2em;
 }
 .matches, .standings, .register {
-    background-color: white;
+    background-color: rgb(208, 238, 196);
     padding: 1em;
     margin: 1em 0;
     border-radius: 5px;
