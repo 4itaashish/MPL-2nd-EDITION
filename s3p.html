@@ -31,6 +31,7 @@
                 <option value="s1p.html">S1:AASHISH</option>
                 <option value="s2p.html">S2:BINAYA</option>
                 <option value="s3p.html" selected>S3:ANISH</option>
+                <option value="s4p.html">S4:AASHISH</option>
                 <option value="pointstable.html">Current Season</option>
             </select>
         </div>
@@ -268,6 +269,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+function changeSeason() {
+    var seasonDropdown = document.getElementById("season");
+    var selectedValue = seasonDropdown.value;
+    if (selectedValue) {
+        window.location.href = selectedValue; // Redirects to the selected season's page
+    }
+}
 
 
     </script>
