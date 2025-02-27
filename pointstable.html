@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eFootball League - Points Table</title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-    .top-four {
-    border-top: 2px solid rgb(73, 241, 21);
-}
-
-   </style>
    
 </head>
 <body>
@@ -133,6 +126,7 @@
                 </tbody>
             </table>
         </section>
+        <!--
         <section id="points-table" class="standings">
             <h2>TEAM A</h2>
             <table id="standings-table">
@@ -340,7 +334,7 @@
                 </tbody>
             </table>
         </section>
-      
+      -->
     </div>
     <!--
     <div class="container">
@@ -408,7 +402,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const sortedRows = sortStandings(rows);
         sortedRows.forEach((row, index) => {
             row.classList.remove('top-four'); // Remove previous highlighting
-            if (index < 2) {
+            if (index < 4) {
                 row.classList.add('top-four'); // Highlight top 4 teams
             }
             tbody.appendChild(row); // Re-append rows in sorted order
