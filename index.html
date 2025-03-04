@@ -6,10 +6,93 @@
     <title>eFootball League - Fixtures</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let popup = document.createElement("div");
+            popup.innerHTML = `
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <span class="close" onclick="closePopup()">&times;</span>
+                        <h2>CONGRATULATIONS BINAYA!</h2>
+                        <p>FOR WINNING S6 eFOOTBALL MANAKAMANA PREMIERE LEAGUE TITLE FOR THE 2ND TIME</p>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(popup);
+        });
+        
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #A50044, #004D98);
+            color: white;
+            text-align: center;
+        }
+        header {
+            background: #A50044;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav {
+            background: #004D98;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            background: #A50044;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+        }
+        .matches {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        footer {
+            background: #A50044;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1 >eFootball<br>Manakamana Premiere League<br> 3rd EDITION. </h1 >
+        <h1>eFootball<br>Manakamana Premiere League<br> 3rd EDITION. </h1>
     </header>
     <nav>
         <a href="#fixtures">Fixtures</a>
@@ -31,15 +114,11 @@
             </select>
         </div>
         <section id="fixtures" class="matches">
-                
-
-            
-                    
-            
+            <h1>ENTRY FEE HALAU SATHHI HARU</h1>
         </section>
     </div>
     <footer>
-        <h2 >Developed By<br>AASHISH POKHREL</h2 >
+        <h2>Developed By<br>AASHISH POKHREL</h2>
     </footer>
     <script src="script.js"></script>
 </body>
