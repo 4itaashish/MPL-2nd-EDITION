@@ -1,37 +1,41 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eFootball League - Fixtures</title>
+    <title>Referral Code Authentication</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    
 </head>
 <body>
-    <header>
-        <h1 >eFootball<br>Manakamana Premiere League<br> 3rd EDITION. </h1 >
-    </header>
-    <nav>
-        <a href="#fixtures">Fixtures</a>
-        <a href="pointstable.html">Points Table</a>
-        <a href="register.html">Register</a>
-        <a href="rules.html">Rules</a>
-    </nav>
-    <div class="content">
-        <div class="season-selector">
-            <label for="season">Select Season:</label>
-            <select id="season" onchange="changeSeason()">
-                <option value="s1f.html">S1:AASHISH</option>
-                <option value="s2f.html">S2:BINAYA</option>
-                <option value="s3f.html">S3:ANISH</option>
-                <option value="s4f.html">S4:AASHISH</option>
-                <option value="s5f.html">S5:AASHISH</option>
-                <option value="s6f.html">S6:BINAYA</option>
-                <option value="index.html" selected>Current Season</option>
-            </select>
-        </div>
-        <section id="fixtures" class="matches">
-<!--
+
+    <div id="content">
+        <header>
+            <h1>eFootball<br>Manakamana Premiere League<br> 3rd EDITION</h1>
+        </header>
+        <nav>
+            <a href="#fixtures">Fixtures</a>
+            <a href="pointstable.html">Points Table</a>
+            <a href="register.html">Register</a>
+            <a href="rules.html">Rules</a>
+        </nav>
+        <div class="content">
+            <div class="season-selector">
+                <label for="season">Select Season:</label>
+                <select id="season" onchange="changeSeason()">
+                    <option value="s1f.html">S1:AASHISH</option>
+                    <option value="s2f.html">S2:BINAYA</option>
+                    <option value="s3f.html">S3:ANISH</option>
+                    <option value="s4f.html">S4:AASHISH</option>
+                    <option value="s5f.html">S5:AASHISH</option>
+                    <option value="s6f.html">S6:BINAYA</option>
+                    <option value="index.html" selected>Current Season</option>
+                </select>
+            </div>
+            <section id="fixtures" class="matches">
+                
                 <h2>MARCH 6</h2>
                 <div class="match">
                     <div>SUJAL</div>
@@ -244,13 +248,55 @@
                     <div>DEV</div>
                 </div>
                 
-                    -->
-            
-        </section>
+                    
+            </section>
+        </div>
+        <footer>
+            <h2>Developed By<br>AASHISH POKHREL</h2>
+        </footer>
     </div>
-    <footer>
-        <h2 >Developed By<br>AASHISH POKHREL</h2 >
-    </footer>
-    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const validReferralCodes = {
+        "ABC123": false,
+        "DEF456": false,
+        "GHI789": false,
+        "JKL012": false,
+        "MNO345": false,
+        "PQR678": false,
+        "STU901": false,
+        "VWX234": false,
+        "YZA567": false,
+        "BCD890": false
+    };
+
+    function askForReferralCode() {
+        let userCode = prompt("Enter your referral code:");
+        if (validReferralCodes.hasOwnProperty(userCode)) {
+            if (!validReferralCodes[userCode]) {
+                validReferralCodes[userCode] = true; // Mark as used
+                localStorage.setItem("referralUsed", "true");
+                document.getElementById("content").style.display = "block";
+            } else {
+                alert("This referral code has already been used!");
+                askForReferralCode();
+            }
+        } else {
+            alert("Invalid referral code!");
+            askForReferralCode();
+        }
+    }
+
+    if (!localStorage.getItem("referralUsed")) {
+        document.getElementById("content").style.display = "none"; // Ensure it stays hidden
+        askForReferralCode();
+    } else {
+        document.getElementById("content").style.display = "block";
+    }
+});
+
+    </script>
+<script src="script.js"></script>
 </body>
 </html>
