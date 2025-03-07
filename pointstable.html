@@ -206,34 +206,7 @@
                     </tr>
                     
                      
-                    
-                    
-                  
-                     
-                   
-                    
-                    
-                </tbody>
-            </table>
-        </section>
-        <section id="points-table" class="standings">
-            <h2>TEAM B</h2>
-            <table id="standings-table">
-                <thead>
                     <tr>
-                        <th>Teams</th>
-                        <th>MP</th>
-                        <th>W</th>
-                        <th>D</th>
-                        <th>L</th>
-                        <th>GF</th>
-                        <th>GA</th>
-                        <th>GD</th>
-                        <th>Pts</th>
-                    </tr>
-                </thead>
-                <tbody>
-                      <tr>
                         <td>SAMIR</td>
                         <td>0</td>
                         <td>0</td>
@@ -267,6 +240,17 @@
                         <td>0</td>
                     </tr>
 
+                    <tr>
+                        <td>BIKASH</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
                     
                     <tr>
                         <td>ANISH</td>
@@ -280,7 +264,7 @@
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>AALU VAI</td>
+                        <td>DEV</td>
                         <td>0</td>
                         <td>0</td>
                         <td>0</td>
@@ -291,9 +275,6 @@
                         <td>0</td>
                     </tr>
                     
-                     
-                    
-                    
                   
                      
                    
@@ -302,7 +283,7 @@
                 </tbody>
             </table>
         </section>
-      -->
+              -->
     </div>
     <!--
     <div class="container">
@@ -370,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const sortedRows = sortStandings(rows);
         sortedRows.forEach((row, index) => {
             row.classList.remove('top-four'); // Remove previous highlighting
-            if (index < 3) {
+            if (index < 4) {
                 row.classList.add('top-four'); // Highlight top 4 teams
             }
             tbody.appendChild(row); // Re-append rows in sorted order
