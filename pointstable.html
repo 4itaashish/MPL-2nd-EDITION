@@ -5,7 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eFootball League - Points Table</title>
     <link rel="stylesheet" href="style.css">
-   
+    <style>
+        
+        /* Highlight Top 4 Teams */
+        .top-four {
+            border-left: 5px solid rgb(82, 231, 89);
+            padding-left: 10px;
+        }
+        .btm-three {
+            border-left: 5px solid rgb(233, 10, 10);
+            padding-left: 10px;
+        }
+        .yellow {
+    border-left: 5px solid yellow;
+    padding-left: 10px;
+}
+.blue {
+    border-left: 5px solid blue;
+    padding-left: 10px;
+}
+
+    </style>
 </head>
 <body>
     <header>
@@ -350,12 +370,20 @@ document.addEventListener('DOMContentLoaded', function () {
         // Sort rows and update the table
         const sortedRows = sortStandings(rows);
         sortedRows.forEach((row, index) => {
-            row.classList.remove('top-four'); // Remove previous highlighting
-            if (index < 4) {
-                row.classList.add('top-four'); // Highlight top 4 teams
-            }
-            tbody.appendChild(row); // Re-append rows in sorted order
-        });
+    row.classList.remove('top-four', 'btm-three', 'q1', 'q2', 'yellow', 'blue'); // Remove previous highlighting
+
+    if (index < 4) {
+        row.classList.add('top-four'); // Highlight top 4 teams
+    } else if (index > 7) {
+        row.classList.add('btm-three'); 
+    } else if (index === 4 || index === 7) {
+        row.classList.add('yellow'); // Yellow for 5th and 8th position
+    } else if (index === 5 || index === 6) {
+        row.classList.add('blue'); // Blue for 6th and 7th position
+    }
+    tbody.appendChild(row); // Re-append rows in sorted order
+});
+
     });
 });
 
